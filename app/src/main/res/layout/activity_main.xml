@@ -7,11 +7,21 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/icon_cost_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_store"
+        app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cost_of_service" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cost_of_service"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="180dp"
         android:layout_height="0dp"
+        android:layout_marginStart="32dp"
         android:hint="@string/cost_of_service"
         app:endIconDrawable="@drawable/ic_baseline_cancel_24"
         app:endIconMode="custom"
@@ -25,6 +35,15 @@
             android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_service"
+        app:layout_constraintBottom_toBottomOf="@id/service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/service_question" />
 
     <TextView
         android:id="@+id/service_question"
@@ -62,10 +81,20 @@
             android:text="@string/amazing_15" />
     </RadioGroup>
 
+    <ImageView
+        android:id="@+id/icon_round_up_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_up"
+        app:layout_constraintBottom_toBottomOf="@id/round_up_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/round_up_switch" />
+
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:checked="true"
         android:text="@string/round_up_tip"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,18 +103,21 @@
 
     <Button
         android:id="@+id/calculate_button"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/calculate"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/round_up_switch"
         app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
 
     <TextView
         android:id="@+id/tip_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculate_button"
         tools:text="Tip Amount: $10" />
